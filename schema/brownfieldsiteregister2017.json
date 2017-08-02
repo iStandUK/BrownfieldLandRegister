@@ -72,11 +72,8 @@
       "constraints": {
         "required": true,
         "type": "http://www.w3.org/2001/XMLSchema#string",
-		"enum": [
-			"WGS84",
-			"OSGB36",
-			"ETRS89"
-		]
+		"pattern": "^(WGS84|OSGB36|ETRS89)$"
+		
       }
     },
     {
@@ -117,12 +114,7 @@
       "constraints": {
         "required": true,
         "type": "http://www.w3.org/2001/XMLSchema#string",
-        "enum": [
-			"public ownership",
-			"not in public ownership",
-			"unknown ownership",
-			"mixed ownership"
-		]
+        "pattern": "^(public ownership|not in public ownership|unknown ownership|mixed ownership)$"
       }
     },
 	
@@ -133,9 +125,7 @@
       "constraints": {
         "required": false,
         "type": "http://www.w3.org/2001/XMLSchema#string",
-        "enum": [
-			"yes"
-		]
+        "pattern": "^$|^(yes)$"
       }
     },
 	
@@ -146,11 +136,7 @@
       "constraints": {
         "required": true,
         "type": "http://www.w3.org/2001/XMLSchema#string",
-        "enum": [
-			"permissioned",
-			"not permissioned",
-			"pending decision"
-		]
+        "pattern": "^(permissioned|not permissioned|pending decision)$"
       }
     },
     {
@@ -160,15 +146,7 @@
       "constraints": {
         "required": false,
         "type": "http://www.w3.org/2001/XMLSchema#string",
-        "enum": [
-					"full planning permission",
-					"outline planning permission",
-					"reserved matters approval",
-					"permission in principle",
-					"technical details consent",
-					"planning permission granted under an order",
-					"other"
-		]
+        "pattern": "^$|^(full planning permission|outline planning permission|reserved matters approval|permission in principle|technical details consent|planning permission granted under an order|other)$"
       }
     },
     {
@@ -199,9 +177,7 @@
       "constraints": {
         "required": false,
         "type": "http://www.w3.org/2001/XMLSchema#string",
-        "enum": [
-			"yes"
-		]
+        "pattern": "^$|^(yes)$"
       }
     },
 	
@@ -246,9 +222,7 @@
       "constraints": {
         "required": false,
         "type": "http://www.w3.org/2001/XMLSchema#string",
-        "enum": [
-					"yes"
-		]
+        "pattern": "^$|^(yes)$"
       }
     },
 	
@@ -279,9 +253,7 @@
       "constraints": {
         "required": false,
         "type": "http://www.w3.org/2001/XMLSchema#string",
-        "enum": [
-					"yes"
-		]
+        "pattern": "^$|^(yes)$"
       }
     },
 
