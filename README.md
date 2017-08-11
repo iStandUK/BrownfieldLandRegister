@@ -1,2 +1,2 @@
-# BrownfieldSiteRegister
-Standard for publishing Brownfield Site Registers
+# BrownfieldLandRegister
+Standard for publishing Brownfield Land Registers
