@@ -1,0 +1,303 @@
+{
+  "title" : "Brownfield Land Register - 2017 Regulations",
+  "fields": [
+    {
+      "name": "OrganisationURI",
+      "title": "OrganisationURI",
+	  "description": "To identify the Local Authority within whose area the parcel of land lies.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "pattern": "^http:\\/\\/opendatacommunities.org\\/id\\/"
+      }
+    },
+    {
+      "name": "OrganisationLabel",
+      "title": "OrganisationLabel",
+	  "description": "The name of the local authority that is identified using the OrganisationURI.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+		"maxLength":100
+      }
+    },
+    {
+      "name": "SiteReference",
+      "title": "SiteReference",
+	  "description": "A reference applied by the local authority to identify a site.",	  
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+		"maxLength":50
+      }
+    },
+	
+    {
+      "name": "PreviouslyPartOf",
+      "title": "PreviouslyPartOf",
+	  "description": "The SiteReference that this site was previously a part of when reported on an earlier register.",	  
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+		"maxLength":50
+      }
+    },
+	
+	
+    {
+      "name": "SiteNameAddress",
+      "title": "SiteNameAddress",
+	  "description":"The name and address of a site, which should be sufficient to describe its location.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+		"maxLength":255
+      }
+    },
+	
+    {
+      "name": "SiteplanURL",
+      "title": "SiteplanURL",
+	  "description":"A URL to a web page giving a site plan for the site.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "pattern": "^(http|https):\\/\\/"
+      }
+    },
+    {
+      "name": "CoordinateReferenceSystem",
+      "title": "CoordinateReferenceSystem",
+	  "description":"The Coordinate Reference System that is used for the fields GeoX and GeoY.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+		"pattern": "^(WGS84|OSGB36|ETRS89)$"
+		
+      }
+    },
+    {
+      "name": "GeoX",
+      "title": "GeoX",
+	  "description":"Longitude or east grid reference for the visual centroid of the site boundary.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#float",
+        "pattern": "^[+-]?\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "name": "GeoY",
+      "title": "GeoY",
+	  "description":"Latitude or north grid reference for visual of application boundary.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#float",
+        "pattern": "^[+-]?\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "name": "Hectares",
+      "title": "Hectares",
+	  "description":"The size of the land in hectares.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#float",
+        "pattern": "^\\d*(\\.\\d{1,2})?$"
+      }
+    },
+	
+    {
+      "name": "OwnershipStatus",
+      "title": "OwnershipStatus",
+	  "description": "The ownership status of the land.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+        "pattern": "^(public ownership|not in public ownership|unknown ownership|mixed ownership)$"
+      }
+    },
+	
+    {
+      "name": "Deliverable",
+      "title": "Deliverable",
+	  "description": "To indicate if the land is 'Deliverable'.",	  
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+        "pattern": "^$|^(yes)$"
+      }
+    },
+	
+    {
+      "name": "PlanningStatus",
+      "title": "PlanningStatus",
+	  "description": "To indicate the stage, if any, that has been reached in the planning process for the site.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+        "pattern": "^(permissioned|not permissioned|pending decision)$"
+      }
+    },
+    {
+      "name": "PermissionType",
+      "title": "PermissionType",
+	  "description": "The latest type of permission that has been granted on the site.",	  
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+        "pattern": "^$|^(full planning permission|outline planning permission|reserved matters approval|permission in principle|technical details consent|planning permission granted under an order|other)$"
+      }
+    },
+    {
+      "name": "PermissionDate",
+      "title": "PermissionDate",
+	  "description": "The date permission was granted for the permission set out in the field PermissionType.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#date",
+        "pattern": "^$|^(?:(?:1[6-9]|[2]\\d)\\d{2})-(?:(?:0[1-9])|(?:1[0-2]))-(?:0[1-9]|1\\d|2[0-8])$|^(?:(?:1[6-9]|[2]\\d)\\d{2})-(?:(?:(?:(?:0[13578]|1[02]))-31)|(?:(?:0[1,3-9]|1[0-2])-(?:29|30)))$|^(?:(?:(?:1[6-9]|2\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|2[048])00))-02-29)$"
+		}
+    },
+	
+    {
+      "name": "PlanningHistory",
+      "title": "PlanningHistory",
+	  "description": "Links to webpages giving information about the planning history of the site.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "pattern": "^$|^(http|https):\/\/[^\| ]+(\|(http|https):\/\/[^\| ]+)*$"
+      }
+    },
+    {
+      "name": "ProposedForPIP",
+      "title": "ProposedForPIP",
+	  "description": "To indicate if the site has been proposed for residential development (permission in principle).",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+        "pattern": "^$|^(yes)$"
+      }
+    },
+	
+	
+	{
+      "name": "MinNetDwellings",
+      "title": "MinNetDwellings",
+	  "description": "The minimum net number of dwellings that the local authority estimates the site should support.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#float"
+      }
+    },
+
+    {
+      "name": "DevelopmentDescription",
+      "title": "DevelopmentDescription",
+	  "description":"A description of any proposed housing development.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+		"maxLength":4000
+      }
+    },
+
+    {
+      "name": "NonHousingDevelopment",
+      "title": "NonHousingDevelopment",
+	  "description":"A description of any proposed non-housing development",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+		"maxLength":4000
+      }
+    },
+
+	
+    {
+      "name": "Part2",
+      "title": "Part2",
+	  "description": "To indicate that a site is in Part 2 of the register.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+        "pattern": "^$|^(yes)$"
+      }
+    },
+	
+    {
+      "name": "NetDwellingsRangeFrom",
+      "title": "NetDwellingsRangeFrom",
+	  "description": "The minimum net number of dwellings which, in the authority’s opinion, the land is capable of supporting.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#float"
+      }
+    },
+	
+    {
+      "name": "NetDwellingsRangeTo",
+      "title": "NetDwellingsRangeTo",
+	  "description": "The maximum net number of dwellings which, in the authority’s opinion, the land is capable of supporting.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#float"
+      }
+    },
+
+    {
+      "name": "HazardousSubstances",
+      "title": "HazardousSubstances",
+	  "description": "To indicate the presence of certain characteristics of the site.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+        "pattern": "^$|^(yes)$"
+      }
+    },
+
+	{
+      "name": "SiteInformation",
+      "title": "SiteInformation",
+	  "description": "Links to webpages giving further information about the site.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "pattern": "^$|^(http|https):\/\/[^\| ]+(\|(http|https):\/\/[^\| ]+)*$"
+      }
+    },
+
+	
+    {
+      "name": "Notes",
+      "title": "Notes",
+	  "description": "General information about a site and its entry on the register.",
+      "constraints": {
+        "required": false,
+        "type": "http://www.w3.org/2001/XMLSchema#string",
+		"maxLength":4000
+      }
+    },
+    {
+      "name": "FirstAddedDate",
+      "title": "FirstAddedDate",
+	  "description": "The date that the site was first added to the register.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#date",
+		"pattern": "^$|^(?:(?:1[6-9]|[2]\\d)\\d{2})-(?:(?:0[1-9])|(?:1[0-2]))-(?:0[1-9]|1\\d|2[0-8])$|^(?:(?:1[6-9]|[2]\\d)\\d{2})-(?:(?:(?:(?:0[13578]|1[02]))-31)|(?:(?:0[1,3-9]|1[0-2])-(?:29|30)))$|^(?:(?:(?:1[6-9]|2\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|2[048])00))-02-29)$"
+      }
+    },
+    {
+      "name": "LastUpdatedDate",
+      "title": "LastUpdatedDate",
+	  "description": "The date that information about the site was last updated.",
+      "constraints": {
+        "required": true,
+        "type": "http://www.w3.org/2001/XMLSchema#date",
+		"pattern": "^$|^(?:(?:1[6-9]|[2]\\d)\\d{2})-(?:(?:0[1-9])|(?:1[0-2]))-(?:0[1-9]|1\\d|2[0-8])$|^(?:(?:1[6-9]|[2]\\d)\\d{2})-(?:(?:(?:(?:0[13578]|1[02]))-31)|(?:(?:0[1,3-9]|1[0-2])-(?:29|30)))$|^(?:(?:(?:1[6-9]|2\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|2[048])00))-02-29)$"
+      }
+    }
+  ]
+}
